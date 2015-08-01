@@ -14,11 +14,11 @@
         var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
         var monthArr = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
         var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
-        var template = ( month + 1 ) + '/' + day + '(' + monthArr[month] + ')';
         var i = -1;
         var len = lastDay.getDate() +1;
         var count = firstDay.getDay() - 1;
         var div = '';
+        var frag = document.createDocumentFragment();
 
         for (i = 1; i < len; i++) {
             div = document.createElement('div');
@@ -26,11 +26,10 @@
               count = 0;
             }
             div.textContent = ( month + 1 ) + '/' + i + '(' + weekDayArr[count] + ')';
+            frag.appendChild(div);
             count ++;
-            document.body.appendChild(div);
         }
-
-
+        document.body.appendChild(frag);
     </script>
 
 
