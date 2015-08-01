@@ -1,5 +1,5 @@
 # dateGenerator
-A simple date generator for my personal use
+A simple date generator for my personal use.
 
 #TODO
 1. use DOM fragment instend of appendChild in the loop.
