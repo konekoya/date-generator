@@ -3,6 +3,7 @@
   var DateGenerator = function() {
     var doc = document;
     var date = new Date();
+    var year = date.getFullYear();
     var month = date.getMonth();
     var day = date.getDate();
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
@@ -20,11 +21,19 @@
     var monthPicker = '';
 
     submitBtn.addEventListener('click', function(e){
-      yearValue = doc.querySelector('.year-picker').value;
+      yearValue = Number(doc.querySelector('.year-picker').value || year);
       monthPicker = doc.querySelector('.month-picker');
-      monthValue = monthPicker.options[monthPicker.selectedIndex].text;
+      monthValue = Number(monthPicker.options[monthPicker.selectedIndex].value);
+      console.log(yearValue)
+      console.log(monthValue)
+
+      firstDay = new Date(yearValue, monthValue, 1);
+      lastDay = new Date(yearValue, monthValue + 1, 0)
+      console.log(firstDay)
+      console.log(lastDay)
       e.preventDefault();
     }, false);
+
 
     for (i = 1; i < len; i++) {
         span = doc.createElement('span');
