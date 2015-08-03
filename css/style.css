@@ -1,15 +1,33 @@
 body {
  font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 100%;
+ background-color: #1695A3;
 }
 .container {
   width: 90%;
   max-width: 1000px;
   margin: auto;
 }
+h2 {
+  color: #fff;
+  font-weight: normal;
+  font-size: 2rem;
+}
 .date-picker {
-  margin-bottom: 20px;
+  margin: 10px 0 20px 0;
+  background-color: #fff;
+  padding: 20px 1.8rem;
+  border-radius: 2px;
+}
+.year-picker {
+  height: 26px;
+  width: 200px;
+  padding-left: 10px;
+  border-radius: 2px;
+  border: 2px solid #e1e1e1;
 }
 .item {
+  color: #fff;
   display: block;
   font-size: 13px;
   margin-bottom: 5px;
