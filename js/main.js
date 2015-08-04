@@ -2,6 +2,8 @@
 
   var DateGenerator = function() {
     var doc = document;
+    var date = new Date();
+    var currentYear = date.getFullYear();
     var year = '';
     var month = '';
     var day = '';
@@ -18,13 +20,13 @@
     var submitBtn = doc.querySelector('.submit-btn');
 
     submitBtn.addEventListener('click', function(e){
-      year = Number(doc.querySelector('.year-picker').value || year);
+      year = Number(doc.querySelector('.year-picker').value || currentYear)
       month = doc.querySelector('.month-picker');
       month = Number(month.options[month.selectedIndex].value);
       firstDay = new Date(year, month, 1);
       lastDay = new Date(year, month + 1, 0);
       len = lastDay.getDate() + 1;
-      count = firstDay.getDate() - 1;
+      count = firstDay.getDay() - 1;
 
       for (i = 1; i < len; i++) {
           span = doc.createElement('span');

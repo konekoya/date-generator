@@ -26,6 +26,20 @@ h2 {
   border-radius: 2px;
   border: 2px solid #e1e1e1;
 }
+.month-picker {
+  height: 32px;
+  width: 200px;
+  border-radius: 2px;
+  border: 2px solid #e1e1e1;
+}
+.submit-btn {
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: #eb7f00;
+}
 .item {
   color: #fff;
   display: block;
