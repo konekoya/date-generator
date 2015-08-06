@@ -15,9 +15,9 @@
     var len = '';
     var count = '';
     var span = '';
-    var frag = doc.createDocumentFragment();
     var outPut = doc.querySelector('.output');
     var submitBtn = doc.querySelector('.submit-btn');
+    var div = doc.createElement('div');
 
     submitBtn.addEventListener('click', function(e){
       year = Number(doc.querySelector('.year-picker').value || currentYear)
@@ -27,6 +27,7 @@
       lastDay = new Date(year, month + 1, 0);
       len = lastDay.getDate() + 1;
       count = firstDay.getDay() - 1;
+      div.innerHTML = '';
 
       for (i = 1; i < len; i++) {
           span = doc.createElement('span');
@@ -35,12 +36,12 @@
             count = 0;
           }
           span.textContent = ( month + 1 ) + '/' + i + '(' + weekDayArr[count] + ')';
-          frag.appendChild(span);
+          div.appendChild(span)
           count ++;
       }
 
       if (outPut) {
-        outPut.appendChild(frag);
+        outPut.appendChild(div);
       }
 
       e.preventDefault();
