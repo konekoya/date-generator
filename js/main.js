@@ -6,10 +6,8 @@
     var currentYear = date.getFullYear();
     var year = '';
     var month = '';
-    var day = '';
     var firstDay = '';
     var lastDay = '';
-    var monthArr = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
     var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
     var i = -1;
     var len = '';
