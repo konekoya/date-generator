@@ -1,7 +1,14 @@
 body {
- font-family: Verdana, Arial, Helvetica, sans-serif;
- font-size: 100%;
- background-color: #1695A3;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: #1695A3;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+input,
+button {
+  outline: none;
 }
 .container {
   width: 90%;
@@ -32,13 +39,22 @@ h2 {
   border-radius: 2px;
   border: 2px solid #e1e1e1;
 }
-.submit-btn {
-  color: #fff;
+.btn {
   border-radius: 2px;
   border: none;
   cursor: pointer;
   padding: 8px 10px;
+}
+.submit-btn {
+  color: #fff;
   background-color: #eb7f00;
+}
+.copy-btn {
+  color: #fff;
+  background-color: #3498DB;
+}
+.hide {
+  display: none;
 }
 .item {
   color: #fff;

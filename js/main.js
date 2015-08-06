@@ -16,8 +16,10 @@
     var outPut = doc.querySelector('.output');
     var submitBtn = doc.querySelector('.submit-btn');
     var div = doc.createElement('div');
+    var copyBtn = doc.querySelector('.copy-btn');
+    var temp = '';
 
-    submitBtn.addEventListener('click', function(e){
+    submitBtn.addEventListener('click', function(e) {
       year = Number(doc.querySelector('.year-picker').value || currentYear)
       month = doc.querySelector('.month-picker');
       month = Number(month.options[month.selectedIndex].value);
@@ -26,6 +28,7 @@
       len = lastDay.getDate() + 1;
       count = firstDay.getDay() - 1;
       div.innerHTML = '';
+      copyBtn.classList.remove('hide');
 
       for (i = 1; i < len; i++) {
           span = doc.createElement('span');
@@ -44,6 +47,7 @@
 
       e.preventDefault();
     }, false);
+
   };
 
   window.onload = function() {
