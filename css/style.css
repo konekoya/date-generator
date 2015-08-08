@@ -27,7 +27,7 @@ h2 {
   border-radius: 2px;
 }
 .year-picker {
-  height: 26px;
+  height: 32px;
   width: 200px;
   padding-left: 10px;
   border-radius: 2px;
@@ -48,10 +48,6 @@ h2 {
 .submit-btn {
   color: #fff;
   background-color: #eb7f00;
-}
-.copy-btn {
-  color: #fff;
-  background-color: #3498DB;
 }
 .hide {
   display: none;
