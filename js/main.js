@@ -17,6 +17,22 @@
     var submitBtn = doc.querySelector('.submit-btn');
     var div = doc.createElement('div');
     var yearPicker = doc.querySelector('.year-picker');
+    var chap = CHAPTERS;
+
+    console.log(chap)
+
+    for (var key in chap) {
+      var num = chap[key];
+
+      if (num >= 3) {
+        var itemLen = num;
+        for (var j = 0; j < itemLen; j++) {
+          console.log(key + ' ' + num);
+          num -= 3;
+        }
+      }
+    }
+
 
     submitBtn.addEventListener('click', function(e) {
       year = Number(yearPicker.value || currentYear);
