@@ -25,10 +25,14 @@
       var num = chap[key];
 
       if (num >= 3) {
-        var itemLen = num;
+        var itemLen = num / 3;
         for (var j = 0; j < itemLen; j++) {
           console.log(key + ' ' + num);
           num -= 3;
+
+          if (num < 3 && num > 0) {
+            console.log(num);
+          }
         }
       }
     }
