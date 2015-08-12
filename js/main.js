@@ -4,6 +4,7 @@
     var doc = document;
     var date = new Date();
     var currentYear = date.getFullYear();
+    var currentMonth = date.getMonth();
     var year = '';
     var month = '';
     var firstDay = '';
@@ -17,7 +18,17 @@
     var submitBtn = doc.querySelector('.submit-btn');
     var div = doc.createElement('div');
     var yearPicker = doc.querySelector('.year-picker');
+    var monthPicker = doc.querySelector('.month-picker');
+    var colors = ['2980B9', '2C3E50', '1695A3', '468966', 'B64926'];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
     var chap = TEST;
+
+    console.log(randomColor)
+
+    // set up default settings
+    yearPicker.value = currentYear;
+    monthPicker.value = currentMonth;
+    doc.body.style.backgroundColor = '#' + randomColor;
 
     // console.log(chap)
     console.log(chap.length )
@@ -25,11 +36,10 @@
       console.log(chap[j])
     }
 
-
     submitBtn.addEventListener('click', function(e) {
       year = Number(yearPicker.value || currentYear);
       yearPicker.value = year;
-      month = doc.querySelector('.month-picker');
+      month = monthPicker;
       month = Number(month.options[month.selectedIndex].value);
       firstDay = new Date(year, month, 1);
       lastDay = new Date(year, month + 1, 0);
@@ -48,6 +58,7 @@
           count ++;
       }
 
+      // append the result
       if (outPut) {
         outPut.appendChild(div);
       }
