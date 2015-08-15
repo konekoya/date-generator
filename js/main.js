@@ -32,14 +32,14 @@
     doc.body.style.backgroundColor = '#' + randomColor;
 
     // console.log(chap)
-    for (var j = 0, lenj = chap.length; j < lenj; j++) {
-      // console.log(chap[j][0])
-      // console.log(chap[j][1])
-      for (var k = 0, lenk = chap[j].length; k < lenk; k++) {
-        console.log(chap[j][k])
-      }
-      // var single = chap[j][]
-    }
+    // for (var j = 0, lenj = chap.length; j < lenj; j++) {
+    //   // console.log(chap[j][0])
+    //   // console.log(chap[j][1])
+    //   for (var k = 0, lenk = chap[j].length; k < lenk; k++) {
+    //     console.log(chap[j][k])
+    //   }
+    //   // var single = chap[j][]
+    // }
 
     submitBtn.addEventListener('click', function(e) {
       year = Number(yearPicker.value || currentYear);

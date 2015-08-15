@@ -5,3 +5,4 @@ A simple date generator for my personal use.
 1. output date format improvement
 2. get the bible chapters? By using Array, maybe we can achieve that?
 3. set up a static web page for this project.
+4. fix undefined bug in the first day of month
