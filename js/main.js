@@ -19,27 +19,13 @@
     var div = doc.createElement('div');
     var yearPicker = doc.querySelector('.year-picker');
     var monthPicker = doc.querySelector('.month-picker');
-    var colors = ['2980B9', '2C3E50', '1695A3', '468966', 'B64926'];
+    var colors = ['2980B9', '2C3E50', '1695A3', '468966'];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
-    var chap = [
-      ['joshua', 50],
-      ['kay', 20]
-    ];
 
     // set up default settings
     yearPicker.value = currentYear;
     monthPicker.value = currentMonth;
     doc.body.style.backgroundColor = '#' + randomColor;
-
-    // console.log(chap)
-    // for (var j = 0, lenj = chap.length; j < lenj; j++) {
-    //   // console.log(chap[j][0])
-    //   // console.log(chap[j][1])
-    //   for (var k = 0, lenk = chap[j].length; k < lenk; k++) {
-    //     console.log(chap[j][k])
-    //   }
-    //   // var single = chap[j][]
-    // }
 
     submitBtn.addEventListener('click', function(e) {
       year = Number(yearPicker.value || currentYear);
@@ -50,6 +36,11 @@
       len = lastDay.getDate() + 1;
       count = firstDay.getDay() - 1;
       div.innerHTML = '';
+
+      // prevent undefined day
+      if (count === -1) {
+        count = 6;
+      }
 
       // create elements
       for (i = 1; i < len; i++) {
