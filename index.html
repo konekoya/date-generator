@@ -40,16 +40,18 @@
         var j = -1;
         var innerLen = -1;
         var num = -1;
-        var temp = [];
+        var currentChap = 1;
+        var base = -1;
 
         function loopThr(array) {
           innerLen = Math.floor(array / 3) + 1;
-          console.log(innerLen)
-          for (j = 0; j < innerLen; j++) {
-            temp.push(array);
-            array -= 3;
+          base = 3;
+          // console.log('Array length: ' + innerLen);
+          for (j = 1; j < innerLen; j++) {
+            console.log(currentChap + '-' + (base * j));
+            currentChap += 3;
+
           }
-          console.log(temp);
 
         }
 
