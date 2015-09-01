@@ -1,77 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Date Generator</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <title>Simple Date Generator</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <div class="container">
-      <h2>Date Generator</h2>
-      <div class="date-picker">
-        <input class="year-picker" type="text" value="" placeholder="Year">
-        <select name="month-picker" class="month-picker">
-          <option value="0">January</option>
-          <option value="1">February</option>
-          <option value="2">March</option>
-          <option value="3">April</option>
-          <option value="4">May</option>
-          <option value="5">June</option>
-          <option value="6">July</option>
-          <option value="7">August</option>
-          <option value="8">September</option>
-          <option value="9">October</option>
-          <option value="10">November</option>
-          <option value="11">December</option>
-        </select>
-        <input type="submit" class="btn submit-btn">
-      </div>
-
-      <div class="output"></div>
-
+  <div class="container">
+    <h2>Date Generator</h2>
+    <div class="date-picker">
+      <input class="year-picker" type="text" value="" placeholder="Year">
+      <select name="month-picker" class="month-picker">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+      <input type="submit" class="btn submit-btn">
     </div>
 
-    <script src="./js/main.js"></script>
-    <script>
-      (function() {
-        var arr = [60, 50];
-        var len = arr.length;
-        var i = -1;
-        var j = -1;
-        var innerLen = -1;
-        var num = -1;
-        var currentChap = 1;
-        var base = -1;
+    <div class="output"></div>
 
-        function loopThr(array) {
-          innerLen = Math.floor(array / 3) + 1;
-          base = 3;
-          // console.log('Array length: ' + innerLen);
-          for (j = 1; j < innerLen; j++) {
-            console.log(currentChap + '-' + (base * j));
-            currentChap += 3;
+  </div>
 
+  <script src="./js/main.js"></script>
+  <script>
+    (function() {
+      var arr = [60, 50];
+      var chap = {
+        創世記: 60,
+        出埃及記: 50
+      };
+      var len = arr.length;
+      var i = -1;
+      var j = -1;
+      var innerLen = -1;
+      var num = -1;
+      var currentChap = 1;
+      var base = -1;
+
+      if (Object.size !== 'undefined') {
+        Object.size = function(obj) {
+          var size = 0;
+          var key = null;
+          for (key in obj) {
+            if (obj.hasOwnProperty(key)) {
+              size++
+            };
           }
+          return size;
+        };
+      }
 
+      var chapLen = Object.size(chap);
+      console.log(chapLen);
+
+      function loopThr(array) {
+        innerLen = Math.floor(array / 3) + 1;
+        base = 3;
+        // console.log('Array length: ' + innerLen);
+        for (j = 1; j < innerLen; j++) {
+          console.log(currentChap + '-' + (base * j));
+          currentChap += 3;
         }
+        currentChap = 1;
+      }
 
+      for (i = 0; i < len; i++) {
+        loopThr(arr[i]);
 
-        loopThr(arr[0]);
+        // if (num > 0) {
+        //   for (j = 0; j < num; j++) {
+        //     num -= 3;
+        //     console.log(num)
+        //   }
+        // }
+      }
 
-
-        for (i = 0; i < len; i++) {
-          num = arr[i];
-
-
-          // if (num > 0) {
-          //   for (j = 0; j < num; j++) {
-          //     num -= 3;
-          //     console.log(num)
-          //   }
-          // }
-        }
-
-      }())
-    </script>
+    }())
+  </script>
 </body>
+
 </html>
