@@ -33,35 +33,34 @@
 
   </div>
 
+  <script src="./js/chapter.js"></script>
   <script src="./js/main.js"></script>
   <script>
     (function() {
-      var arr = [['創世記', 60], ['出埃及記', 50]];
-      var chap = {
-        創世記: 60,
-        出埃及記: 50
-      };
-      var len = arr.length;
+      var chap = CHAPTERS;
+      var len = chap.length;
       var i = -1;
       var j = -1;
       var innerLen = -1;
-      var num = -1;
       var currentChap = 1;
       var base = -1;
 
       function loopThr(array) {
         innerLen = Math.floor(array[1] / 3) + 1;
         base = 3;
-        // console.log('Array length: ' + innerLen);
+
         for (j = 1; j < innerLen; j++) {
           console.log(array[0] + ' ' + currentChap + '-' + (base * j));
           currentChap += 3;
+          if ((base * j) >= array[1]) {
+            console.log('ceiling: ' + (base * j));
+          }
         }
         currentChap = 1;
       }
 
       for (i = 0; i < len; i++) {
-        loopThr(arr[i]);
+        loopThr(chap[i]);
       }
 
     }())
