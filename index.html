@@ -48,13 +48,9 @@
       function loopThr(array) {
         innerLen = Math.floor(array[1] / 3) + 1;
         base = 3;
-
         for (j = 1; j < innerLen; j++) {
           console.log(array[0] + ' ' + currentChap + '-' + (base * j));
           currentChap += 3;
-          if ((base * j) >= array[1]) {
-            console.log('ceiling: ' + (base * j));
-          }
         }
         currentChap = 1;
       }
@@ -63,7 +59,7 @@
         loopThr(chap[i]);
       }
 
-    }())
+    }());
   </script>
 </body>
 
