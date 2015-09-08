@@ -46,6 +46,7 @@
       var base = -1;
       var remain = -1;
       var chapName = '';
+      var chapRemain = -1;
 
       // output format function
       function printOut(arrIndex, start, end) {
@@ -63,7 +64,7 @@
         base = 3;
         chapName = array[0];
 
-        console.log(remain)
+        // console.log(remain)
 
         for (j = 1; j < innerLen; j++) {
           printOut(chapName, currentChap, (base * j));
@@ -81,11 +82,14 @@
       }
 
       for (i = 0; i < len; i++) {
-        loopThr(chap[i]);
+        chapRemain = chap[i][1] % 3;
+        loopThr(chap[i], chapRemain);
       }
 
       // get to know how many chap left in each array
+      // give each array a different fn
       // 
+
 
     }())
   </script>
