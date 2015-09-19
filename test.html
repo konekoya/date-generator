@@ -51,14 +51,10 @@
       var j = -1;
       var innerLen = -1;
 
-
       for (i = 0; i < bookLen; i++) {
-        // console.log(books[i].title, books[i].chaps);
         innerLen = Math.floor(books[i].chaps / 3 + 1);
-        console.log('innerLen ' + innerLen)
-        for (j = 1; j < books[i].chaps ; j++) {
-
-          console.log(books[i].chaps -= 3);
+        for (j = 1; j < innerLen ; j++) {
+          console.log(books[i].title + ' ' + (books[i].chaps -= 3));
         }
       }
 
