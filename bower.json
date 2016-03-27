@@ -1,0 +1,21 @@
+{
+  "name": "dateGenerator",
+  "homepage": "https://github.com/konekoya/dateGenerator",
+  "authors": [
+    "Konekoya <tank158r5155@yahoo.com.tw>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "clipboard": "^1.5.9"
+  }
+}

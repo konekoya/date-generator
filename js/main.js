@@ -16,6 +16,7 @@
     var span = '';
     var outPut = doc.querySelector('.output');
     var submitBtn = doc.querySelector('.submit-btn');
+    var copyBtn = doc.querySelector('.copy-btn');
     var div = doc.createElement('div');
     var yearPicker = doc.querySelector('.year-picker');
     var monthPicker = doc.querySelector('.month-picker');
@@ -56,6 +57,7 @@
 
       // append the result
       if (outPut) {
+        copyBtn.classList.add('is-pressed');
         outPut.appendChild(div);
       }
 
