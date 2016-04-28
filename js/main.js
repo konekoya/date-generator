@@ -1,28 +1,34 @@
-(function() {
+var DateGenerator = (function() {
 
-  var DateGenerator = function() {
-    var doc = document;
-    var date = new Date();
-    var currentYear = date.getFullYear();
-    var currentMonth = date.getMonth();
-    var year = '';
-    var month = '';
-    var firstDay = '';
-    var lastDay = '';
-    var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
-    var i = -1;
-    var len = '';
-    var count = '';
-    var span = '';
-    var outPut = doc.querySelector('.output');
-    var submitBtn = doc.querySelector('.submit-btn');
-    var copyBtn = doc.querySelector('.copy-btn');
-    var div = doc.createElement('div');
-    var yearPicker = doc.querySelector('.year-picker');
-    var monthPicker = doc.querySelector('.month-picker');
-    var colors = ['2980B9', '2C3E50', '1695A3', '468966'];
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  var doc = document;
+  var date = new Date();
+  var currentYear = date.getFullYear();
+  var currentMonth = date.getMonth();
+  var year = '';
+  var month = '';
+  var firstDay = '';
+  var lastDay = '';
+  var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
+  var i = -1;
+  var len = '';
+  var count = '';
+  var span = '';
+  var outPut = doc.querySelector('.output');
+  var submitBtn = doc.querySelector('.submit-btn');
+  var copyBtn = doc.querySelector('.copy-btn');
+  var div = doc.createElement('div');
+  var yearPicker = doc.querySelector('.year-picker');
+  var monthPicker = doc.querySelector('.month-picker');
+  var colors = ['2980B9', '2C3E50', '1695A3', '468966'];
+  var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+
+  function appendResult() {
+    copyBtn.classList.add('is-pressed');
+    outPut.appendChild(div);
+  }
+
+  function init() {
     // set up default settings
     yearPicker.value = currentYear;
     monthPicker.value = currentMonth;
@@ -57,8 +63,7 @@
 
       // append the result
       if (outPut) {
-        copyBtn.classList.add('is-pressed');
-        outPut.appendChild(div);
+        appendResult();
       }
 
       e.preventDefault();
@@ -66,8 +71,14 @@
 
   };
 
-  window.onload = function() {
-    var dateG = new DateGenerator();
+  var publicAPI = {
+    init: init
   };
 
+  return publicAPI;
+
 }());
+
+window.onload = function() {
+  DateGenerator.init();
+};
