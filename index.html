@@ -29,79 +29,66 @@
       <input type="submit" class="btn submit-btn">
       <button class="btn copy-btn" data-clipboard-target=".output">Copy generated content</button>
     </div>
-
     <div class="output"></div>
-
   </div>
-  <script src="//cdn.jsdelivr.net/clipboard.js/1.5.8/clipboard.min.js"></script>
+  <script src="./js/clipboard.min.js"></script>
   <script src="./js/chapter.js"></script>
   <script src="./js/main.js"></script>
   <script>
-    (function() {
-      var chap = CHAPTERS;
-      var len = chap.length;
-      var i = -1;
-      var j = -1;
-      var innerLen = -1;
-      var currentChap = 1;
-      var base = -1;
-      var remain = -1;
-      var chapName = '';
-      var chapRemain = -1;
+  // (function() {
+  //   var chap = CHAPTERS;
+  //   var len = chap.length;
+  //   var i = -1;
+  //   var j = -1;
+  //   var innerLen = -1;
+  //   var currentChap = 1;
+  //   var base = -1;
+  //   var remain = -1;
+  //   var chapName = '';
+  //   var chapRemain = -1;
 
-      // output format function
-      function printOut(arrIndex, start, end) {
-        if (typeof end !== 'undefined') {
-          // console.log(arrIndex + ' ' + start + '-' + end);
-        } else {
-          // console.log(arrIndex + ' ' + start + ' +');
-        }
-      }
+  //   // output format function
+  //   function printOut(arrIndex, start, end) {
+  //     if (typeof end !== 'undefined') {
+  //       // console.log(arrIndex + ' ' + start + '-' + end);
+  //     } else {
+  //       // console.log(arrIndex + ' ' + start + ' +');
+  //     }
+  //   }
 
-      // loop through the array
-      function loopThr(array) {
-        innerLen = Math.floor(array[1] / 3) + 1;
-        remain = array[1] % 3;
-        base = 3;
-        chapName = array[0];
+  //   // loop through the array
+  //   function loopThr(array) {
+  //     innerLen = Math.floor(array[1] / 3) + 1;
+  //     remain = array[1] % 3;
+  //     base = 3;
+  //     chapName = array[0];
 
-        // console.log(remain)
+  //     // console.log(remain)
 
-        for (j = 1; j < innerLen; j++) {
-          printOut(chapName, currentChap, (base * j));
-          currentChap += 3;
+  //     for (j = 1; j < innerLen; j++) {
+  //       printOut(chapName, currentChap, (base * j));
+  //       currentChap += 3;
 
-          if (j === innerLen -1) {
-            if (remain === 2) {
-              printOut(chapName, currentChap, (currentChap + remain - 1) + ' +');
-            } else if (remain === 1 ) {
-              printOut(chapName, currentChap);
-            }
-          }
-        }
-        currentChap = 1;
-      }
+  //       if (j === innerLen - 1) {
+  //         if (remain === 2) {
+  //           printOut(chapName, currentChap, (currentChap + remain - 1) + ' +');
+  //         } else if (remain === 1) {
+  //           printOut(chapName, currentChap);
+  //         }
+  //       }
+  //     }
+  //     currentChap = 1;
+  //   }
 
-      for (i = 0; i < len; i++) {
-        chapRemain = chap[i][1] % 3;
-        loopThr(chap[i], chapRemain);
-      }
+  //   for (i = 0; i < len; i++) {
+  //     chapRemain = chap[i][1] % 3;
+  //     loopThr(chap[i], chapRemain);
+  //   }
 
-      // get to know how many chap left in each array
-      // give each array a different fn
-      // 
-
-      var clipboard = new Clipboard('.copy-btn');
-
-      clipboard.on('success', function(e) {
-          console.log(e);
-      });
-      clipboard.on('error', function(e) {
-          console.log(e);
-      });
-
-
-    }())
+  //   // get to know how many chap left in each array
+  //   // give each array a different fn
+  //   // 
+  // }())
   </script>
 </body>
 
