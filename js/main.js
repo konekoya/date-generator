@@ -16,15 +16,13 @@ var DateGenerator = (function() {
   var monthPicker = doc.querySelector('.month-picker');
 
 
-  function setBackground(config) {
+  function setBackground(colors) {
     // temp solution, should come up a better and rubost one to replace this
-    if (config) {
-      return;
+    if (colors) {
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      doc.body.style.backgroundColor = '#' + randomColor;
     }
 
-    var colors = config.colors; // fallback color is handled by CSS
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
-    doc.body.style.backgroundColor = '#' + randomColor;
   }
 
   function appendResult() {
@@ -59,7 +57,7 @@ var DateGenerator = (function() {
           count = 0;
         }
         span.textContent = (month + 1) + '/' + i + '(' + weekDayArr[count] + ')';
-        div.appendChild(span)
+        div.appendChild(span);
         count++;
       }
 
@@ -79,9 +77,7 @@ var DateGenerator = (function() {
     yearPicker.value = currentYear;
     monthPicker.value = currentMonth;
 
-    setBackground({
-      color: ['2980B9', '2C3E50', '1695A3', '468966']
-    });
+    setBackground(['2980B9', '2C3E50', '1695A3', '468966']);
     bindEvents();
 
     var clipboard = new Clipboard(copyBtn);
@@ -94,7 +90,7 @@ var DateGenerator = (function() {
       console.log(e);
     });
 
-  };
+  }
 
   var publicAPI = {
     init: init
