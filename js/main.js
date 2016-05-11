@@ -22,7 +22,6 @@ var DateGenerator = (function() {
       var randomColor = colors[Math.floor(Math.random() * colors.length)];
       doc.body.style.backgroundColor = '#' + randomColor;
     }
-
   }
 
   function appendResult() {
@@ -73,23 +72,15 @@ var DateGenerator = (function() {
   }
 
   function init() {
-    // set up default settings
+    // default values
     yearPicker.value = currentYear;
     monthPicker.value = currentMonth;
 
     setBackground(['2980B9', '2C3E50', '1695A3', '468966']);
     bindEvents();
 
+    // initialize clipboard
     var clipboard = new Clipboard(copyBtn);
-
-    clipboard.on('success', function(e) {
-      console.log(e);
-    });
-
-    clipboard.on('error', function(e) {
-      console.log(e);
-    });
-
   }
 
   var publicAPI = {
