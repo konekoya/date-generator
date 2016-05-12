@@ -25,6 +25,7 @@
 
   global.POPUP = {
     init: init,
+    create: create,
     destory: destory
   };
 

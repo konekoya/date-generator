@@ -2,6 +2,7 @@ var DateGenerator = (function(win) {
 
   var global = win;
   var doc = document;
+  var popup = global.POPUP;
   var date = new Date();
   var currentYear = date.getFullYear();
   var currentMonth = date.getMonth();
@@ -28,7 +29,7 @@ var DateGenerator = (function(win) {
   function appendResult() {
     copyBtn.classList.add('btn-is-active');
     outPut.appendChild(div);
-    POPUP.init();
+    popup.init();
   }
 
   function bindEvents() {
@@ -84,10 +85,9 @@ var DateGenerator = (function(win) {
     // initialize clipboard
     var clipboard = new Clipboard(copyBtn);
     copyBtn.addEventListener('click', function() {
-      var popup = doc.querySelector('.popup');
-      
-      if (popup) {
-        popup.classList.add('popup-is-active');
+      var popupEl = doc.querySelector('.popup');
+      if (popupEl) {
+        popupEl.classList.add('popup-is-active');
       }
     });
   }
