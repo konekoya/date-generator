@@ -33,6 +33,7 @@
   </div>
   <script src="./js/clipboard.min.js"></script>
   <script src="./js/chapter.js"></script>
+  <script src="./js/popup.js"></script>
   <script src="./js/main.js"></script>
   <script>
   (function() {
@@ -42,9 +43,9 @@
     // output format function
     function print(arrIndex, start, end) {
       if (typeof end !== 'undefined') {
-        console.log(arrIndex + ' ' + start + '-' + end);
+        // console.log(arrIndex + ' ' + start + '-' + end);
       } else {
-        console.log(arrIndex + ' ' + start + ' +');
+        // console.log(arrIndex + ' ' + start + ' +');
       }
     }
 
@@ -70,11 +71,11 @@
         if (j === innerLen - 1) {
           if (remain === 2) {
             print(chapName, currentChap, (currentChap + remain - 1) + ' +');
-            console.log(remain)
+            // console.log(remain)
 
           } else if (remain === 1) {
             print(chapName, currentChap);
-            console.log(remain)
+            // console.log(remain)
 
           }
         }
