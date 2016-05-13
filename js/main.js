@@ -16,6 +16,7 @@ var DateGenerator = (function(win) {
   var div = doc.createElement('div');
   var yearPicker = doc.querySelector('.year-picker');
   var monthPicker = doc.querySelector('.month-picker');
+  var popupEl = doc.querySelector('.popup');
 
 
   function setBackground(colors) {
@@ -29,12 +30,14 @@ var DateGenerator = (function(win) {
   function appendResult() {
     copyBtn.classList.add('btn-is-active');
     outPut.appendChild(div);
-    popup.init();
+    if (!popupEl) {
+      popup.init();
+    }
   }
 
   function bindEvents() {
 
-    function handleSubmit(evt) {
+    function handleSubmit(e) {
       var year = Number(yearPicker.value || currentYear);
       yearPicker.value = year;
       var month = Number(monthPicker.options[monthPicker.selectedIndex].value);
@@ -68,28 +71,42 @@ var DateGenerator = (function(win) {
         appendResult();
       }
 
-      evt.preventDefault();
+      e.preventDefault();
+    }
+
+    function handleCopy(e) {
+      popupEl = doc.querySelector('.popup');
+      if (popupEl) {
+        popup.enable();
+      }
+      e.stopPropagation();
+    }
+
+    function onDocClick(e) {
+      popupEl = doc.querySelector('.popup');
+      if (popupEl) {
+        popup.disable();
+      }
+      e.stopPropagation();
     }
 
     submitBtn.addEventListener('click', handleSubmit, false);
+
+    // initialize clipboard
+    copyBtn.addEventListener('click', handleCopy);
+
+    doc.addEventListener('click', onDocClick)
   }
 
   function init() {
+    var clipboard = new Clipboard(copyBtn);
+
     // default values
     yearPicker.value = currentYear;
     monthPicker.value = currentMonth;
 
     setBackground(['2980B9', '2C3E50', '1695A3', '468966']);
     bindEvents();
-
-    // initialize clipboard
-    var clipboard = new Clipboard(copyBtn);
-    copyBtn.addEventListener('click', function() {
-      var popupEl = doc.querySelector('.popup');
-      if (popupEl) {
-        popupEl.classList.add('popup-is-active');
-      }
-    });
   }
 
   var publicAPI = {
