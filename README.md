@@ -2,4 +2,6 @@
 A simple date generator for my personal use.
 
 #TODO
-1. output date format improvement
+- Refactor popup.js
+- Fix popup position or work on scroll event
+- include bible books and chapters

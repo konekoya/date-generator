@@ -7,9 +7,6 @@ var DateGenerator = (function(win) {
   var currentYear = date.getFullYear();
   var currentMonth = date.getMonth();
   var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
-  var len = '';
-  var count = '';
-  var span = '';
   var outPut = doc.querySelector('.output');
   var submitBtn = doc.querySelector('.submit-btn');
   var copyBtn = doc.querySelector('.copy-btn');
@@ -46,6 +43,7 @@ var DateGenerator = (function(win) {
       var i = -1;
       var len = lastDay.getDate() + 1;
       var count = firstDay.getDay() - 1;
+      var span = '';
 
       div.innerHTML = '';
 
@@ -70,7 +68,6 @@ var DateGenerator = (function(win) {
       if (outPut) {
         appendResult();
       }
-
       e.preventDefault();
     }
 
@@ -87,7 +84,6 @@ var DateGenerator = (function(win) {
       if (popupEl) {
         popup.disable();
       }
-      e.stopPropagation();
     }
 
     submitBtn.addEventListener('click', handleSubmit, false);
@@ -99,6 +95,7 @@ var DateGenerator = (function(win) {
   }
 
   function init() {
+    // initialize the clicpboard plugin
     var clipboard = new Clipboard(copyBtn);
 
     // default values
