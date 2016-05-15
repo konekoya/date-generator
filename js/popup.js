@@ -3,6 +3,7 @@
   var global = win;
   var doc = document;
   var body = doc.body;
+  var el = null;
 
   function create(options) {
     var options = options || {};
@@ -12,15 +13,15 @@
     body.appendChild(box)
   }
 
-  function destory(el) {
-    var el = doc.querySelector('.popup');
+  function destory() {
+    el = doc.querySelector('.popup');
     if (el) {
       body.removeChild(el);
     }
   }
 
   function enable() {
-    var el = doc.querySelector('.popup');
+    el = doc.querySelector('.popup');
     if (el) {
       el.classList.remove('popup-is-disabled');
       el.classList.add('popup-is-active');
@@ -28,7 +29,7 @@
   }
 
   function disable() {
-    var el = doc.querySelector('.popup');
+    el = doc.querySelector('.popup');
     if (el) {
       el.classList.remove('popup-is-active');
       el.classList.add('popup-is-disabled');
