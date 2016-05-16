@@ -76,6 +76,7 @@ var DateGenerator = (function(win) {
       if (popupEl) {
         popup.enable();
       }
+      popup.timeout(5000);
       e.stopPropagation();
     }
 

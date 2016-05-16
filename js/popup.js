@@ -36,6 +36,18 @@
     }
   }
 
+  function timeout(time) {
+    var timer = null;
+
+    timer = setTimeout(function() {
+      disable();
+    }, time || 3000);
+  }
+
+  function detectScroll() {
+    
+  }
+
   function init() {
     create();
   }
@@ -46,7 +58,8 @@
     create: create,
     destory: destory,
     enable: enable,
-    disable: disable
+    disable: disable,
+    timeout: timeout
   };
 
 }(window));
