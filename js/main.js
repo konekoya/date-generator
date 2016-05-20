@@ -8,7 +8,6 @@ var DateGenerator = (function(win) {
   var currentMonth = date.getMonth();
   var weekDayArr = ['一', '二', '三', '四', '五', '六', '日'];
   var outPut = doc.querySelector('.output');
-  var submitBtn = doc.querySelector('.submit-btn');
   var copyBtn = doc.querySelector('.copy-btn');
   var div = doc.createElement('div');
   var yearPicker = doc.querySelector('.year-picker');
@@ -33,6 +32,8 @@ var DateGenerator = (function(win) {
   }
 
   function bindEvents() {
+    var submitBtn = doc.querySelector('.submit-btn');
+
 
     function handleSubmit(e) {
       var year = Number(yearPicker.value || currentYear);
@@ -44,6 +45,7 @@ var DateGenerator = (function(win) {
       var len = lastDay.getDate() + 1;
       var count = firstDay.getDay() - 1;
       var span = '';
+
 
       div.innerHTML = '';
 

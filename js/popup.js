@@ -44,10 +44,6 @@
     }, time || 3000);
   }
 
-  function detectScroll() {
-    
-  }
-
   function init() {
     create();
   }
