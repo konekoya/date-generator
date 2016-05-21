@@ -3,108 +3,111 @@
 /* Base */
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 100%;
-    background-color: #1695A3;
-    overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  background-color: #1695A3;
+  overflow-x: hidden;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input,
 button {
-    outline: none;
+  outline: none;
 }
 
 h2 {
-    color: #fff;
-    font-weight: normal;
-    font-size: 2rem;
+  color: #fff;
+  font-weight: normal;
+  font-size: 2rem;
 }
 
 
 /* Layout */
 
 .container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 }
-
 
 /* Modules */
 
 .date-picker {
-    margin: 10px 0 20px 0;
-    background-color: #fff;
-    padding: 20px 1.8rem;
-    border-radius: 2px;
+  margin: 10px 0 20px 0;
+  background-color: #fff;
+  padding: 20px 1.8rem;
+  border-radius: 2px;
 }
 
 .year-picker {
-    height: 32px;
-    width: 200px;
-    padding-left: 10px;
-    border-radius: 2px;
-    border: 2px solid #e1e1e1;
+  height: 32px;
+  width: 200px;
+  padding-left: 10px;
+  border-radius: 2px;
+  border: 2px solid #e1e1e1;
 }
 
 .month-picker {
-    height: 32px;
-    width: 200px;
-    border-radius: 2px;
-    border: 2px solid #e1e1e1;
+  height: 32px;
+  width: 200px;
+  border-radius: 2px;
+  border: 2px solid #e1e1e1;
 }
 
 .btn {
-    border-radius: 2px;
-    border: none;
-    cursor: pointer;
-    padding: 8px 10px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
 }
 
 .submit-btn {
-    color: #fff;
-    background-color: #eb7f00;
+  color: #fff;
+  background-color: #eb7f00;
 }
 
 .copy-btn {
-    color: #fff;
+  color: #fff;
 }
 
 .item {
-    color: #fff;
-    display: block;
-    font-size: 13px;
-    margin-bottom: 5px;
+  color: #fff;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 
 .popup {
-    position: absolute;
-    bottom: 20px;
-    padding: 15px 20px;
-    background: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    font-size: 12px;
-    transition: all .3s ease-in-out;
+  position: absolute;
+  bottom: 20px;
+  padding: 15px 20px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: all .3s ease-in-out;
 }
+
 .popup-is-disabled {
-    right: -50%;
+  right: -50%;
 }
+
 .popup-is-active {
-    right: 20px;
+  right: 20px;
 }
+
 
 /* States */
 
 .btn-is-active {
-    background-color: #2980B9;
+  background-color: #2980B9;
 }
+

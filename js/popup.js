@@ -1,5 +1,5 @@
 (function(win) {
-  
+
   var global = win;
   var doc = document;
   var body = doc.body;

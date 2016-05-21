@@ -36,76 +36,73 @@
   <script src="./js/popup.js"></script>
   <script src="./js/main.js"></script>
   <script>
-  (function() {
-    var chap = CHAPTERS;
-    var len = chap.length;
+    (function() {
+      var chap = CHAPTERS;
+      var len = chap.length;
 
-    // output format function
-    function print(arrIndex, start, end) {
-      if (typeof end !== 'undefined') {
-        // console.log(arrIndex + ' ' + start + '-' + end);
-      } else {
-        // console.log(arrIndex + ' ' + start + ' +');
-      }
-    }
-
-    function getEvenChap() {
-
-    }
-
-    // loop through the array
-    function loopThr(array) {
-      var innerLen = Math.floor(array[1] / 3) + 1;
-      var remain = array[1] % 3;
-      var base = 3;
-      var chapName = array[0];
-      var i = -1;
-      var j = -1;
-      var currentChap = 1;
-
-
-      for (j = 1; j < innerLen; j++) {
-        print(chapName, currentChap, (base * j));
-        currentChap += 3;
-
-        if (j === innerLen - 1) {
-          if (remain === 2) {
-            print(chapName, currentChap, (currentChap + remain - 1) + ' +');
-            // console.log(remain)
-
-          } else if (remain === 1) {
-            print(chapName, currentChap);
-            // console.log(remain)
-
-          }
+      // output format function
+      function print(arrIndex, start, end) {
+        if (typeof end !== 'undefined') {
+          // console.log(arrIndex + ' ' + start + '-' + end);
+        } else {
+          // console.log(arrIndex + ' ' + start + ' +');
         }
       }
-      currentChap = 1;
-    }
 
-    for (i = 0; i < len; i++) {
-      chapRemain = chap[i][1] % 3;
-      loopThr(chap[i], chapRemain);
-    }
+      function getEvenChap() {
 
-    // get to know how many chap left in each array
-    // give each array a different fn
-    // 
+      }
+
+      // loop through the array
+      function loopThr(array) {
+        var innerLen = Math.floor(array[1] / 3) + 1;
+        var remain = array[1] % 3;
+        var base = 3;
+        var chapName = array[0];
+        var i = -1;
+        var j = -1;
+        var currentChap = 1;
 
 
-  /*
+        for (j = 1; j < innerLen; j++) {
+          print(chapName, currentChap, (base * j));
+          currentChap += 3;
+
+          if (j === innerLen - 1) {
+            if (remain === 2) {
+              print(chapName, currentChap, (currentChap + remain - 1) + ' +');
+              // console.log(remain)
+
+            } else if (remain === 1) {
+              print(chapName, currentChap);
+              // console.log(remain)
+
+            }
+          }
+        }
+        currentChap = 1;
+      }
+
+      for (i = 0; i < len; i++) {
+        chapRemain = chap[i][1] % 3;
+        loopThr(chap[i], chapRemain);
+      }
+
+      // get to know how many chap left in each array
+      // give each array a different fn
+      // 
+
+
+      /*
   
-  case 1 === 0, no need to worry about this
-  case 2 === 1, get the remain, start with 2 in the next book
-  case 3 === 2, get the remain, start with 1 in the next book
+        case 1 === 0, no need to worry about this
+        case 2 === 1, get the remain, start with 2 in the next book
+        case 3 === 2, get the remain, start with 1 in the next book
 
-  */
+        */
 
-  }())
-
+    }())
   </script>
 </body>
 
 </html>
-
-
