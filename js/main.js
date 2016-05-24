@@ -3,6 +3,7 @@ var DateGenerator = (function(win) {
   var global = win;
   var doc = document;
   var popup = global.POPUP;
+  var generator = global.ARRAYGENERATOR;
   var date = new Date();
   var currentYear = date.getFullYear();
   var currentMonth = date.getMonth();
@@ -14,6 +15,10 @@ var DateGenerator = (function(win) {
   var monthPicker = doc.querySelector('.month-picker');
   var popupEl = doc.querySelector('.popup');
 
+  var startDate = '2016.1.1';
+  var startChap = generator.allBooks[48];
+  console.log(startChap)
+  console.log(generator.allBooks);
 
   function setBackground(colors) {
     // temp solution, should come up a better and rubost one to replace this

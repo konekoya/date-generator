@@ -33,51 +33,9 @@
   </div>
   <script src="./js/clipboard.min.js"></script>
   <script src="./js/chapter.js"></script>
+  <script src="./js/array-generator.js"></script>
   <script src="./js/popup.js"></script>
   <script src="./js/main.js"></script>
-  <script>
-    (function() {
-      var books = BIBLEBOOKS;
-      console.log(books[0])
-
-      // create new array base on the passing array book names and numbers
-      function createArray(arr) {
-        if (Array.isArray(arr)) {
-          var newArr = [];
-          var bookName = arr[0];
-          var chaps = arr[1];
-          var i = -1;
-
-          for (i = 1; i <= chaps; i++) {
-            newArr.push(bookName + i);
-          }
-
-          return newArr;
-        }
-      }
-
-      // get all the books and chapters then concatenate them together into a huge array. Yes, I mean HUGE!
-      function getBooks(books, callback) {
-        if (Array.isArray(books)) {
-          var arr = [];
-          var i = -1;
-          var len = books.length;
-
-          if (typeof callback === 'function') {
-            for (i = 0; i < len; i++) {
-              console.log(books[0])
-              arr.push(createArray(books[i]));
-            }
-          }
-          return arr;
-        }
-      }
-      var allBooks = getBooks(books, createArray);
-
-      console.log(allBooks);
-
-    }());
-  </script>
 </body>
 
 </html>
