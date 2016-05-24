@@ -1,4 +1,4 @@
-# dateGenerator
+# Date generator
 A simple date generator for my personal use.
 
 #TODO
