@@ -35,6 +35,7 @@ h2 {
   margin: auto;
 }
 
+
 /* Modules */
 
 .date-picker {
@@ -64,6 +65,10 @@ h2 {
   border: none;
   cursor: pointer;
   padding: 8px 10px;
+}
+
+.btn-is-active {
+  background-color: #2980B9;
 }
 
 .submit-btn {
@@ -103,11 +108,3 @@ h2 {
 .popup-is-active {
   right: 20px;
 }
-
-
-/* States */
-
-.btn-is-active {
-  background-color: #2980B9;
-}
-
