@@ -1,6 +1,5 @@
-var POPUP = (function(win) {
+var POPUP = (function() {
 
-  var global = win;
   var doc = document;
   var body = doc.body;
   var el = null;
@@ -57,4 +56,4 @@ var POPUP = (function(win) {
     timeout: timeout
   };
 
-}(window));
+}());

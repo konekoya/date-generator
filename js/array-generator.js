@@ -1,5 +1,4 @@
-var ARRAYGENERATOR = (function(win) {
-  var global = win;
+var ARRAYGENERATOR = (function() {
   var books = BIBLE;
   var allBooks = null;
 
