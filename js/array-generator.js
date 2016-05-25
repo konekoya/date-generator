@@ -1,6 +1,7 @@
-(function(win) {
+var ARRAYGENERATOR = (function(win) {
   var global = win;
   var books = BIBLE;
+  var allBooks = null;
 
   // create new array base on the passing array book names and numbers
   function createArray(arr) {
@@ -40,10 +41,10 @@
     }
   }
 
-  var allBooks = getBooks(books, createArray);
+  allBooks = getBooks(books, createArray);
 
-  global.ARRAYGENERATOR = {
+  return {
     allBooks: allBooks
-  }
+  };;
 
 }(window));

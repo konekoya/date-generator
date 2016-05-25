@@ -1,4 +1,4 @@
-(function(win) {
+var POPUP = (function(win) {
 
   var global = win;
   var doc = document;
@@ -48,8 +48,7 @@
     create();
   }
 
-  // public APIs
-  global.POPUP = {
+  return {
     init: init,
     create: create,
     destory: destory,

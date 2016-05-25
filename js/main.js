@@ -18,7 +18,11 @@ var DateGenerator = (function(win) {
   var startDate = '2016.1.1';
   var startChap = generator.allBooks[48];
   console.log(startChap)
-  console.log(generator.allBooks);
+    // console.log(generator.allBooks);
+
+  function get(argument) {
+    // body...
+  }
 
   function setBackground(colors) {
     // temp solution, should come up a better and rubost one to replace this
@@ -114,11 +118,9 @@ var DateGenerator = (function(win) {
     bindEvents();
   }
 
-  var publicAPI = {
+  return {
     init: init
   };
-
-  return publicAPI;
 
 }(window));
 
