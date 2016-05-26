@@ -15,13 +15,34 @@ var DateGenerator = (function(win) {
   var monthPicker = doc.querySelector('.month-picker');
   var popupEl = doc.querySelector('.popup');
 
-  var startDate = '2016.1.1';
-  var startChap = generator.allBooks[48];
-  console.log(startChap)
+  var startPoint = {
+    year: 2016,
+    month: 0,
+    day: 15,
+    chapter: generator.allBooks[48]
+  };
+
+  console.log(startPoint.chapter)
     // console.log(generator.allBooks);
 
-  function get(argument) {
-    // body...
+  function getDuration(options) {
+    if (options) {
+      var duration = -1;
+      var year = options.year;
+      var month = options.month;
+
+      if (startPoint.year === year) {
+        if (startPoint.month === month) {
+          return;
+        }
+      } else if (startPoint.year < year) {
+        year = year - startPoint.year;
+      } else {
+        year = year - startPoint.year;
+      }
+    }
+
+    return duration;
   }
 
   function setBackground(colors) {
@@ -79,6 +100,12 @@ var DateGenerator = (function(win) {
       if (outPut) {
         appendResult();
       }
+
+      getDuration({
+        year: year,
+        month: month
+      });
+
       e.preventDefault();
     }
 
