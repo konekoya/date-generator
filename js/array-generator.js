@@ -44,6 +44,6 @@ var ARRAYGENERATOR = (function() {
 
   return {
     allBooks: allBooks
-  };;
+  };
 
 }(window));

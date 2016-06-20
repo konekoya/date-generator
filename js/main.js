@@ -22,7 +22,7 @@ var DateGenerator = (function(win) {
     chapter: generator.allBooks[48]
   };
 
-  console.log(startPoint.chapter)
+  console.log('Starting chapter: ' + startPoint.chapter);
     // console.log(generator.allBooks);
 
   function getDuration(options) {
@@ -35,14 +35,16 @@ var DateGenerator = (function(win) {
         if (startPoint.month === month) {
           return;
         }
-      } else if (startPoint.year < year) {
-        year = year - startPoint.year;
       } else {
         year = year - startPoint.year;
+        month = month - startPoint.month;
       }
-    }
 
-    return duration;
+      return {
+        year: year,
+        month: month
+      };
+    }
   }
 
   function setBackground(colors) {
@@ -101,10 +103,12 @@ var DateGenerator = (function(win) {
         appendResult();
       }
 
-      getDuration({
+      var targetDate = getDuration({
         year: year,
         month: month
       });
+
+      console.log(targetDate);
 
       e.preventDefault();
     }
@@ -130,7 +134,7 @@ var DateGenerator = (function(win) {
     // initialize clipboard
     copyBtn.addEventListener('click', handleCopy);
 
-    doc.addEventListener('click', onDocClick)
+    doc.addEventListener('click', onDocClick);
   }
 
   function init() {
