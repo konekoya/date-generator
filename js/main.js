@@ -19,10 +19,12 @@ var DateGenerator = (function(win) {
     year: 2016,
     month: 0,
     day: 15,
-    chapter: generator.allBooks[48]
+    chapter: generator.allBooks[48],
+    concatDate: 2016 + ',' + 0 + ',' + 15
   };
 
   console.log('Starting chapter: ' + startPoint.chapter);
+  console.log('Starting date: ' + startPoint.year + '.' + startPoint.month +  '.' + startPoint.day);
     // console.log(generator.allBooks);
 
   function getDuration(options) {
@@ -30,6 +32,7 @@ var DateGenerator = (function(win) {
       var duration = -1;
       var year = options.year;
       var month = options.month;
+      var day = 0; // it should always start with the first day of the month
 
       if (startPoint.year === year) {
         if (startPoint.month === month) {
@@ -42,8 +45,25 @@ var DateGenerator = (function(win) {
 
       return {
         year: year,
-        month: month
+        month: month,
+        day: day,
+        concatDate: year + ',' + month + ',' + day
       };
+    }
+  }
+
+  function getBetweenDays(firstDate, secondDate) {
+    console.log(firstDate)
+    if (firstDate && secondDate) {
+      var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+
+      var startDate = new Date(firstDate);
+      var endDate = new Date(secondDate);
+
+      console.log(endDate)
+
+      var diffDays = Math.round(Math.abs((startDate.getTime() - endDate.getTime())/(oneDay)));
+      return diffDays;
     }
   }
 
@@ -103,12 +123,16 @@ var DateGenerator = (function(win) {
         appendResult();
       }
 
-      var targetDate = getDuration({
+      // get user submitted date
+      var userDate = getDuration({
         year: year,
-        month: month
+        month: month,
+        day: 0
       });
 
-      console.log(targetDate);
+      console.log(getBetweenDays(startPoint.concatDate, userDate.concatDate));
+
+      // console.log(getBetweenDays(targetDate));
 
       e.preventDefault();
     }
