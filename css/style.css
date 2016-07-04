@@ -69,16 +69,17 @@ h2 {
 }
 
 .btn-is-active {
+  color: #fff;
   background-color: #2980B9;
 }
 
+.btn-is-disabled {
+  color: #fff;
+}
+  
 .submit-btn {
   color: #fff;
   background-color: #eb7f00;
-}
-
-.copy-btn {
-  color: #fff;
 }
 
 .item {

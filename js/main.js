@@ -17,22 +17,20 @@ var DateGenerator = (function(win) {
 
   var startPoint = {
     year: 2016,
-    month: 0,
-    day: 15,
+    month: 5,
+    day: 1,
     chapter: generator.allBooks[48],
-    concatDate: 2016 + ',' + 0 + ',' + 15
   };
 
   console.log('Starting chapter: ' + startPoint.chapter);
   console.log('Starting date: ' + startPoint.year + '.' + startPoint.month +  '.' + startPoint.day);
-    // console.log(generator.allBooks);
 
   function getDuration(options) {
     if (options) {
       var duration = -1;
       var year = options.year;
       var month = options.month;
-      var day = 0; // it should always start with the first day of the month
+      var day = 1; // it should always start with the first day of the month
 
       if (startPoint.year === year) {
         if (startPoint.month === month) {
@@ -47,7 +45,6 @@ var DateGenerator = (function(win) {
         year: year,
         month: month,
         day: day,
-        concatDate: year + ',' + month + ',' + day
       };
     }
   }
@@ -56,11 +53,10 @@ var DateGenerator = (function(win) {
     console.log(firstDate)
     if (firstDate && secondDate) {
       var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+      var startDate = new Date(firstDate.year, firstDate.month, firstDate.day);
+      var endDate = new Date(secondDate.year, secondDate.month, firstDate.day);
 
-      var startDate = new Date(firstDate);
-      var endDate = new Date(secondDate);
-
-      console.log(endDate)
+      console.log('Starting date: ' + startDate);
 
       var diffDays = Math.round(Math.abs((startDate.getTime() - endDate.getTime())/(oneDay)));
       return diffDays;
@@ -76,6 +72,7 @@ var DateGenerator = (function(win) {
   }
 
   function appendResult() {
+    copyBtn.classList.remove('btn-is-disabled');
     copyBtn.classList.add('btn-is-active');
     outPut.appendChild(div);
     if (!popupEl) {
@@ -85,7 +82,6 @@ var DateGenerator = (function(win) {
 
   function bindEvents() {
     var submitBtn = doc.querySelector('.submit-btn');
-
 
     function handleSubmit(e) {
       var year = Number(yearPicker.value || currentYear);
@@ -130,7 +126,7 @@ var DateGenerator = (function(win) {
         day: 0
       });
 
-      console.log(getBetweenDays(startPoint.concatDate, userDate.concatDate));
+      console.log(getBetweenDays(startPoint, userDate));
 
       // console.log(getBetweenDays(targetDate));
 
