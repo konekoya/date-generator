@@ -25,6 +25,7 @@ var DateGenerator = (function(win) {
   console.log('Starting chapter: ' + startPoint.chapter);
   console.log('Starting date: ' + startPoint.year + '.' + startPoint.month +  '.' + startPoint.day);
 
+
   function getDuration(options) {
     if (options) {
       var duration = -1;
@@ -56,10 +57,21 @@ var DateGenerator = (function(win) {
       var startDate = new Date(firstDate.year, firstDate.month, firstDate.day);
       var endDate = new Date(secondDate.year, secondDate.month, firstDate.day);
 
-      console.log('Starting date: ' + startDate);
-
       var diffDays = Math.round(Math.abs((startDate.getTime() - endDate.getTime())/(oneDay)));
       return diffDays;
+    }
+  }
+
+  function caculateChaps(days) {
+    let base = 48;
+    for (let i = 0; i < days; i++) {
+      if (i === 0) {
+        base += 2;
+        console.log(generator.allBooks[base -2] + ' - ' + generator.allBooks[base]);
+      } else {
+        base += 3;
+        console.log(generator.allBooks[base -2] + ' - ' + generator.allBooks[base]);
+      }
     }
   }
 
@@ -126,8 +138,12 @@ var DateGenerator = (function(win) {
         day: 0
       });
 
-      console.log(getBetweenDays(startPoint, userDate));
+      var betweenDays = getBetweenDays(startPoint, userDate);
+      console.log('Between days: ' + betweenDays);
 
+      caculateChaps(betweenDays);
+
+      // console.log(generator.allBooks)
       // console.log(getBetweenDays(targetDate));
 
       e.preventDefault();
