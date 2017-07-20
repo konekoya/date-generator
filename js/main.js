@@ -1,5 +1,4 @@
 var DateGenerator = (function(win) {
-
   var global = win;
   var doc = document;
   var popup = global.POPUP;
@@ -13,7 +12,6 @@ var DateGenerator = (function(win) {
   var yearPicker = doc.querySelector('.year-picker');
   var monthPicker = doc.querySelector('.month-picker');
   var popupEl = doc.querySelector('.popup');
-
 
   function setBackground(colors) {
     // temp solution, should come up a better and rubost one to replace this
@@ -34,7 +32,6 @@ var DateGenerator = (function(win) {
   function bindEvents() {
     var submitBtn = doc.querySelector('.submit-btn');
 
-
     function handleSubmit(e) {
       var year = Number(yearPicker.value || currentYear);
       yearPicker.value = year;
@@ -45,7 +42,6 @@ var DateGenerator = (function(win) {
       var len = lastDay.getDate() + 1;
       var count = firstDay.getDay() - 1;
       var span = '';
-
 
       div.innerHTML = '';
 
@@ -61,7 +57,7 @@ var DateGenerator = (function(win) {
         if (count > 6) {
           count = 0;
         }
-        span.textContent = (month + 1) + '/' + i + '(' + weekDayArr[count] + ')';
+        span.textContent = month + 1 + '/' + i + '(' + weekDayArr[count] + ')';
         div.appendChild(span);
         count++;
       }
@@ -94,7 +90,7 @@ var DateGenerator = (function(win) {
     // initialize clipboard
     copyBtn.addEventListener('click', handleCopy);
 
-    doc.addEventListener('click', onDocClick)
+    doc.addEventListener('click', onDocClick);
   }
 
   function init() {
@@ -110,12 +106,11 @@ var DateGenerator = (function(win) {
   }
 
   var publicAPI = {
-    init: init
+    init: init,
   };
 
   return publicAPI;
-
-}(window));
+})(window);
 
 window.onload = function() {
   DateGenerator.init();
